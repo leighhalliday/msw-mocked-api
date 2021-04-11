@@ -1,7 +1,11 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+if (process.env.NEXT_PUBLIC_API_MOCKING === "enabled") {
+  require("../mocks");
 }
 
-export default MyApp
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />;
+}
+
+export default MyApp;
